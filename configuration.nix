@@ -56,22 +56,40 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
+
   #xsession
   services.xserver.enable = true;
   #services.xserver.displayManager.lightdm.enable = true;
   #services.xserver.displayManager.startx.enable = true;
   services.xserver.windowManager.i3.enable = true;
-#  displayManager = {
-#	defaultSession = "none+i3";
-#};
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
+  #zsh
+   #programs.zsh.enable = true;
+   users.defaultUserShell = pkgs.zsh;
+	programs = {
+    	zsh = {
+      		enable = true;
+      	autosuggestions.enable = true;
+      	syntaxHighlighting.enable = true;
+      	ohMyZsh = {
+        	enable = true;
+        theme = "pygmalion";
+       	 plugins = [
+	  "git"
+        ];
+      };
+    };
+  }; 
+
+
+
  environment.systemPackages = with pkgs; [
  lightdm
  xorg.xinit
- #xterm
  xorg.libWindowsWM
  neovim
  git
@@ -87,6 +105,7 @@
  atuin
  alacritty
  sxiv
+ dunst
  pywal
  font-awesome_5
  lxappearance 
@@ -94,7 +113,7 @@
  brave
  polybar
  neofetch
-
+ zoxide
 ]; 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
