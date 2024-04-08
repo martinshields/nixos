@@ -62,7 +62,9 @@
   #services.xserver.displayManager.lightdm.enable = true;
   #services.xserver.displayManager.startx.enable = true;
   services.xserver.windowManager.i3.enable = true;
+ # services.xserver.windowManager.i3.configFile = "/home/martin/i3/config";
 
+  services.picom.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -86,7 +88,6 @@
   }; 
 
 
-
  environment.systemPackages = with pkgs; [
  lightdm
  xorg.xinit
@@ -101,20 +102,29 @@
  yadm
  fzf
  picom
- picom-jonaburg
+# picom-jonaburg
+ terminus-nerdfont
  atuin
  alacritty
  sxiv
  dunst
+ unzip
  pywal
+ nitrogen
  font-awesome_5
  lxappearance 
+ clipit
  wget
  brave
  polybar
+ pcmanfm
  neofetch
+ vimPlugins.LazyVim
  zoxide
 ]; 
+
+#programs.pcmanfm.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 #  environment.systemPackages = with pkgs; [
