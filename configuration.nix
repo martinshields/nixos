@@ -99,6 +99,7 @@
  zsh
  oh-my-zsh
  rofi-file-browser
+ chezmoi
  yadm
  fzf
  picom
