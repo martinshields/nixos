@@ -99,14 +99,13 @@
  zsh
  oh-my-zsh
  rofi-file-browser
- chezmoi
  yadm
  fzf
  picom
 # picom-jonaburg
  terminus-nerdfont
  atuin
- alacritty
+ kitty
  sxiv
  dunst
  unzip
@@ -120,7 +119,6 @@
  polybar
  pcmanfm
  neofetch
- vimPlugins.LazyVim
  zoxide
 ]; 
 
